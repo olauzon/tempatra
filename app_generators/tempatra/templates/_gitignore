@@ -1,0 +1,4 @@
+*.sw?
+coverage/*
+views/stylesheets/.sass-cache
+webrat.*

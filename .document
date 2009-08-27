@@ -1,0 +1,7 @@
+README.rdoc
+app_generators/*
+bin/*
+lib/**/*.rb
+features/**/*.feature
+spec/*
+LICENSE
