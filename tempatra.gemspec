@@ -53,33 +53,7 @@ Gem::Specification.new do |s|
      "spec/rcov.opts",
      "spec/spec.opts",
      "spec/spec_helper.rb",
-     "spec/tempatra_spec.rb",
-     "spec/tmp/README.md",
-     "spec/tmp/Rakefile",
-     "spec/tmp/config.rb",
-     "spec/tmp/config.ru",
-     "spec/tmp/config.yml",
-     "spec/tmp/features/homepage.feature",
-     "spec/tmp/features/step_definitions/webrat_steps.rb",
-     "spec/tmp/features/support/env.rb",
-     "spec/tmp/features/support/paths.rb",
-     "spec/tmp/lib/tmp.rb",
-     "spec/tmp/public/images/grid.png",
-     "spec/tmp/public/javascripts/application.js",
-     "spec/tmp/public/javascripts/jquery-1.3.2.min.js",
-     "spec/tmp/public/stylesheets/ie.css",
-     "spec/tmp/public/stylesheets/main.css",
-     "spec/tmp/public/stylesheets/print.css",
-     "spec/tmp/spec/rcov.opts",
-     "spec/tmp/spec/spec.opts",
-     "spec/tmp/spec/spec_helper.rb",
-     "spec/tmp/spec/tmp_spec.rb",
-     "spec/tmp/views/index.haml",
-     "spec/tmp/views/layout.haml",
-     "spec/tmp/views/stylesheets/ie.sass",
-     "spec/tmp/views/stylesheets/main.sass",
-     "spec/tmp/views/stylesheets/partials/_base.sass",
-     "spec/tmp/views/stylesheets/print.sass"
+     "spec/tempatra_spec.rb"
   ]
   s.homepage = %q{http://github.com/olauzon/tempatra}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -88,14 +62,7 @@ Gem::Specification.new do |s|
   s.summary = %q{A RubiGen based Sinatra application generator.}
   s.test_files = [
     "spec/spec_helper.rb",
-     "spec/tempatra_spec.rb",
-     "spec/tmp/config.rb",
-     "spec/tmp/features/step_definitions/webrat_steps.rb",
-     "spec/tmp/features/support/env.rb",
-     "spec/tmp/features/support/paths.rb",
-     "spec/tmp/lib/tmp.rb",
-     "spec/tmp/spec/spec_helper.rb",
-     "spec/tmp/spec/tmp_spec.rb"
+     "spec/tempatra_spec.rb"
   ]
 
   if s.respond_to? :specification_version then
