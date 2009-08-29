@@ -1,3 +1,4 @@
+*.gem
 *.sw?
 .DS_Store
 coverage
