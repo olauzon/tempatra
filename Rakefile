@@ -11,7 +11,7 @@ begin
     gem.homepage = "http://github.com/olauzon/tempatra"
     gem.authors = ["Olivier Lauzon"]
 
-    gem.add_dependency('chriseppstein-compass', '>= 0.8.11')
+    gem.add_dependency('chriseppstein-compass', '>= 0.8.12')
     gem.add_dependency('cucumber', '>= 0.3.98')
     gem.add_dependency('haml', '>= 2.2.3')
     gem.add_dependency('rack-test', '>= 0.4.1')

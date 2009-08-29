@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Olivier Lauzon"]
-  s.date = %q{2009-08-27}
+  s.date = %q{2009-08-29}
   s.default_executable = %q{tempatra}
   s.description = %q{A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.}
   s.email = %q{olauzon@gmail.com}
@@ -70,7 +70,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<chriseppstein-compass>, [">= 0.8.11"])
+      s.add_runtime_dependency(%q<chriseppstein-compass>, [">= 0.8.12"])
       s.add_runtime_dependency(%q<cucumber>, [">= 0.3.98"])
       s.add_runtime_dependency(%q<haml>, [">= 2.2.3"])
       s.add_runtime_dependency(%q<rack-test>, [">= 0.4.1"])
@@ -82,7 +82,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<thin>, [">= 1.2.2"])
       s.add_runtime_dependency(%q<webrat>, [">= 0.5.1"])
     else
-      s.add_dependency(%q<chriseppstein-compass>, [">= 0.8.11"])
+      s.add_dependency(%q<chriseppstein-compass>, [">= 0.8.12"])
       s.add_dependency(%q<cucumber>, [">= 0.3.98"])
       s.add_dependency(%q<haml>, [">= 2.2.3"])
       s.add_dependency(%q<rack-test>, [">= 0.4.1"])
@@ -95,7 +95,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<webrat>, [">= 0.5.1"])
     end
   else
-    s.add_dependency(%q<chriseppstein-compass>, [">= 0.8.11"])
+    s.add_dependency(%q<chriseppstein-compass>, [">= 0.8.12"])
     s.add_dependency(%q<cucumber>, [">= 0.3.98"])
     s.add_dependency(%q<haml>, [">= 2.2.3"])
     s.add_dependency(%q<rack-test>, [">= 0.4.1"])
