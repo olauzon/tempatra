@@ -4,7 +4,6 @@ require 'rake/rdoctask'
 
 require 'spec/rake/spectask'
 
-
 task :default => [ :spec, :cucumber ]
 
 desc "Run the code examples in spec/"

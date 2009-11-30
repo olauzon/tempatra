@@ -11,7 +11,7 @@ describe "Tempatra" do
   end
 
   it "generates a new sinatra project" do
-    `ruby #{TEMPATRA_ROOT}/bin/tempatra spec/tmp`
+    `ruby #{TEMPATRA_ROOT}/bin/tempatra -N spec/tmp`
   end
 
 end

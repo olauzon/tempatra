@@ -11,17 +11,17 @@ begin
     gem.homepage = "http://github.com/olauzon/tempatra"
     gem.authors = ["Olivier Lauzon"]
 
-    gem.add_dependency('chriseppstein-compass', '>= 0.8.12')
-    gem.add_dependency('cucumber', '>= 0.3.98')
-    gem.add_dependency('haml', '>= 2.2.3')
-    gem.add_dependency('rack-test', '>= 0.4.1')
+    gem.add_dependency('compass', '>= 0.8.17')
+    gem.add_dependency('cucumber', '>= 0.4.4')
+    gem.add_dependency('haml', '>= 2.2.13')
+    gem.add_dependency('rack-test', '>= 0.5.2')
     gem.add_dependency('rake', '>= 0.8.7')
-    gem.add_dependency('rdiscount', '>= 1.3.5')
+    gem.add_dependency('rdiscount', '>= 1.5.5')
     gem.add_dependency('rspec')
     gem.add_dependency('rubigen', '>= 1.5.2')
     gem.add_dependency('sinatra', '>= 0.9.4')
-    gem.add_dependency('thin', '>= 1.2.2')
-    gem.add_dependency('webrat', '>= 0.5.1')
+    gem.add_dependency('thin', '>= 1.2.3')
+    gem.add_dependency('webrat', '>= 0.5.3')
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.files = FileList[ 'app_generators/**/*',

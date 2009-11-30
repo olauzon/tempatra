@@ -16,7 +16,8 @@ class TempatraGenerator < RubiGen::Base
               :app_full_name,
               :module_name,
               :git_init,
-              :heroku
+              :heroku,
+              :compile
 
   def initialize(runtime_args, runtime_options = {})
     super
@@ -36,13 +37,13 @@ class TempatraGenerator < RubiGen::Base
       BASEDIRS.each { |path| m.directory path }
 
       # Root
-      m.template  "_gems"         ,  ".gems"
-      m.template  "_gitignore"    ,  ".gitignore"
-      m.template  "config.rb.erb" ,   "config.rb"
-      m.template  "config.ru.erb" ,   "config.ru"
-      m.template  "config.yml.erb",   "config.yml"
-      m.template  "Rakefile.erb"  ,   "Rakefile"
-      m.template  "README.md.erb" ,   "README.md"
+      m.template  "_gems"         , ".gems"
+      m.template  "_gitignore"    , ".gitignore"
+      m.template  "config.rb.erb" , "config.rb"
+      m.template  "config.ru.erb" , "config.ru"
+      m.template  "config.yml.erb", "config.yml"
+      m.template  "Rakefile.erb"  , "Rakefile"
+      m.template  "README.md.erb" , "README.md"
 
       # Sinatra
       m.template  "lib/tempatra.rb.erb" , "lib/#{app_file_name}.rb"
@@ -102,10 +103,10 @@ class TempatraGenerator < RubiGen::Base
       unless File.exist?(File.expand_path(@destination_root) + '/public/images/grid.png')
         m.run("#{compass} --force --grid-img --images-dir public/images")
       end
-      m.run("#{compass}")
+      m.run("#{compass}") if compile
 
       # Git
-      if git_init || heroku
+      if heroku || git_init
         git = which "git"
         unless File.exist?(File.expand_path(@destination_root) + '/.git/config')
           m.run("#{git} init")
@@ -134,10 +135,10 @@ class TempatraGenerator < RubiGen::Base
     $ thin start -p 4567 -R config.ru
     (Then go to http://localhost:4567/ with your browser)
 
-    While you develop, continuously compile your Sass stylesheets with Compass (in another terminal)
+    You can continuously compile your Sass stylesheets with Compass
     $ compass --watch
 
-    And of course, use autospec (in yet another terminal)
+    And of course, use autospec
     $ autospec
 
 
@@ -162,9 +163,10 @@ protected
   def add_options!(opts)
     opts.separator ''
     opts.separator "Tempatra options:"
-    opts.on("-v", "--version", "Show the Tempatra version number and quit")
-    opts.on("-G", "--git-init", "Create a git repository") {|o| options[:git] = o}
-    opts.on("-H", "--heroku", "Create and push to Heroku") {|o| options[:heroku] = o}
+    opts.on("-v", "--version" , "Show the Tempatra version number and quit")
+    opts.on("-C", "--compile" , "Compile Compass stylesheets")    {|o| options[:compile]  = o}
+    opts.on("-N", "--no-git"  , "Don't create a git repository")  {|o| options[:no_git]   = o}
+    opts.on("-H", "--heroku"  , "Create and push to Heroku")      {|o| options[:heroku]   = o}
   end
 
   BASEDIRS = %w(
@@ -181,8 +183,9 @@ protected
               )
 
   def extract_options
-    @git_init = options[:git]     ? true : false
-    @heroku   = options[:heroku]  ? true : false
+    @compile  = options[:compile].nil? ? false  : true
+    @git_init = options[:no_git].nil?  ? true   : false
+    @heroku   = options[:heroku].nil?  ? false  : true
   end
 
   def which(bin)

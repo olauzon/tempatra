@@ -6,7 +6,8 @@ A RubiGen Sinatra application generator providing Blueprint CSS, jQuery, Haml, S
 Installation
 ------------
 
-    $ sudo gem install olauzon-tempatra -s http://gems.github.com/
+    $ gem sources -a http://gemcutter.org/ # If you do not have gemcutter as a source, add it!
+    $ sudo gem install tempatra
 
 Basic Usage
 -----------
@@ -49,7 +50,7 @@ Create git repository
 
     $ tempatra your-app-name -G
 
-Create and push to Heroku
+Create and push to Heroku (requires heroku gem and Heroku account)
 
     $ tempatra your-app-name -H
 

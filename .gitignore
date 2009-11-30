@@ -1,4 +1,5 @@
 *.gem
+.sass-cache/*
 *.sw?
 .DS_Store
 coverage

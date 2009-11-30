@@ -4,26 +4,24 @@ require 'rubygems'
 require 'compass'
 require 'sinatra'
 require 'haml'
-# require 'sass'
 require 'rdiscount'
-
 
 class <%= module_name %> < Sinatra::Application
 
   set :root, APP_ROOT
 
   configure do
-    Compass.configuration.parse(File.join(Sinatra::Application.root, '..', 'config.rb'))
+    Compass.configuration.parse(File.join(APP_ROOT, 'config.rb'))
   end
 
   get '/' do
     haml :index
   end
 
-# Uncomment if your prefer compliling your stylesheets without the compass utility
-  get '/stylesheets/:name.css' do
-    content_type 'text/css', :charset => 'utf-8'
-    sass(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )
-  end
+# <%= compile ? 'Unc' : 'C' %>omment to compile your stylesheets with<%= compile ? 'out' : '' %> the compass utility
+<%= '#' if compile %>  get '/stylesheets/:name.css' do
+<%= '#' if compile %>    content_type 'text/css', :charset => 'utf-8'
+<%= '#' if compile %>    sass(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )
+<%= '#' if compile %>  end
 
 end

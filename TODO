@@ -1,0 +1,3 @@
+  * Change installation source in README (use gemcutter.org instead)
+  * Make dynamic stylesheet compilation default with option to use compass utility instead
+  * Upgrade versions of all gems
