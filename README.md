@@ -26,7 +26,7 @@ Run your application:
 
 Then go to [http://localhost:4567/](http://localhost:4567/) with your browser.
 
-While you develop, continuously compile your Sass stylesheets with Compass (in another terminal):
+You can continuously compile your Sass stylesheets with Compass (in another terminal):
 
     $ compass --watch
 
