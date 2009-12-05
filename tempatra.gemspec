@@ -9,14 +9,15 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Olivier Lauzon"]
-  s.date = %q{2009-11-29}
+  s.date = %q{2009-12-04}
   s.default_executable = %q{tempatra}
   s.description = %q{A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.}
   s.email = %q{olauzon@gmail.com}
   s.executables = ["tempatra"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.md"
+     "README.md",
+     "TODO"
   ]
   s.files = [
     "CHANGELOG",
@@ -63,7 +64,9 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{A RubiGen based Sinatra application generator.}
   s.test_files = [
-    "spec/spec_helper.rb",
+    "spec/rcov.opts",
+     "spec/spec.opts",
+     "spec/spec_helper.rb",
      "spec/tempatra_spec.rb"
   ]
 
@@ -83,6 +86,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sinatra>, [">= 0.9.4"])
       s.add_runtime_dependency(%q<thin>, [">= 1.2.3"])
       s.add_runtime_dependency(%q<webrat>, [">= 0.5.3"])
+      s.add_runtime_dependency(%q<shotgun>, [">= 0.4"])
     else
       s.add_dependency(%q<compass>, [">= 0.8.17"])
       s.add_dependency(%q<cucumber>, [">= 0.4.4"])
@@ -95,6 +99,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<sinatra>, [">= 0.9.4"])
       s.add_dependency(%q<thin>, [">= 1.2.3"])
       s.add_dependency(%q<webrat>, [">= 0.5.3"])
+      s.add_dependency(%q<shotgun>, [">= 0.4"])
     end
   else
     s.add_dependency(%q<compass>, [">= 0.8.17"])
@@ -108,6 +113,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<sinatra>, [">= 0.9.4"])
     s.add_dependency(%q<thin>, [">= 1.2.3"])
     s.add_dependency(%q<webrat>, [">= 0.5.3"])
+    s.add_dependency(%q<shotgun>, [">= 0.4"])
   end
 end
 
