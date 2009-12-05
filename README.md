@@ -22,7 +22,7 @@ Move into your new application:
 
 Run your application:
 
-    $ thin start -p 4567 -R config.ru
+    $ shotgun --server=thin -p 4567 config.ru
 
 Then go to [http://localhost:4567/](http://localhost:4567/) with your browser.
 
