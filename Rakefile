@@ -9,7 +9,7 @@ begin
     gem.description = %Q{A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.}
     gem.email = "olauzon@gmail.com"
     gem.homepage = "http://github.com/olauzon/tempatra"
-    gem.authors = ["Olivier Lauzon"]
+    gem.authors = ["Olivier Lauzon", "Stewart Laufer"]
 
     gem.add_dependency('compass', '>= 0.8.17')
     gem.add_dependency('cucumber', '>= 0.4.4')
