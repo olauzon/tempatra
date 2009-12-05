@@ -61,6 +61,13 @@ Inspiration
 Aaron Quint's [sinatra-gen](http://github.com/quirkey/sinatra-gen) is a Sinatra application generator that provides many options.
 
 
+Authors
+-------
+
+Stewart Laufer (theIV)
+Olivier Lauzon (olauzon)
+
+
 Copyright
 ---------
 
