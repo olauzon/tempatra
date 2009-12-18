@@ -1,4 +1,6 @@
-*.sw?
+*.swo
+*.swp
+.sass-cache
 coverage/*
 views/stylesheets/.sass-cache
 webrat.*
