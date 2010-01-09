@@ -132,7 +132,7 @@ class TempatraGenerator < RubiGen::Base
     $ cd #{app_name}
 
     To run your application
-    $ thin start -p 4567 -R config.ru
+    $ shotgun --server=thin -p 4567 config.ru
     (Then go to http://localhost:4567/ with your browser)
 
     You can continuously compile your Sass stylesheets with Compass
