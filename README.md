@@ -64,7 +64,7 @@ Aaron Quint's [sinatra-gen](http://github.com/quirkey/sinatra-gen) is a Sinatra 
 Authors
 -------
 
-Stewart Laufer (theIV)
+Stewart Laufer (theIV)  
 Olivier Lauzon (olauzon)
 
 
