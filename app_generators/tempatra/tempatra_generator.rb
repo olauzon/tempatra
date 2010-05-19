@@ -37,13 +37,13 @@ class TempatraGenerator < RubiGen::Base
       BASEDIRS.each { |path| m.directory path }
 
       # Root
-      m.template  "_gems"         , ".gems"
-      m.template  "_gitignore"    , ".gitignore"
-      m.template  "config.rb.erb" , "config.rb"
-      m.template  "config.ru.erb" , "config.ru"
-      m.template  "config.yml.erb", "config.yml"
-      m.template  "Rakefile.erb"  , "Rakefile"
-      m.template  "README.md.erb" , "README.md"
+      m.template  "_gems"               , ".gems"
+      m.template  "_gitignore"          , ".gitignore"
+      m.template  "compass.config.erb"  , "compass.config"
+      m.template  "config.ru.erb"       , "config.ru"
+      m.template  "config.yml.erb"      , "config.yml"
+      m.template  "Rakefile.erb"        , "Rakefile"
+      m.template  "README.md.erb"       , "README.md"
 
       # Sinatra
       m.template  "lib/tempatra.rb.erb" , "lib/#{app_file_name}.rb"
@@ -53,8 +53,8 @@ class TempatraGenerator < RubiGen::Base
       m.template  "views/index.haml.erb"  , "views/index.haml"
 
       # jQuery
-      m.template  "public/javascripts/jquery-1.3.2.min.js",
-                  "public/javascripts/jquery-1.3.2.min.js"
+      m.template  "public/javascripts/jquery-1.4.2.min.js",
+                  "public/javascripts/jquery-1.4.2.min.js"
 
       m.template  "public/javascripts/application.js.erb",
                   "public/javascripts/application.js"
@@ -63,8 +63,8 @@ class TempatraGenerator < RubiGen::Base
       m.template  "features/homepage.feature.erb",
                   "features/homepage.feature"
 
-      m.template  "features/step_definitions/webrat_steps.rb",
-                  "features/step_definitions/webrat_steps.rb"
+      m.template  "features/step_definitions/web_steps.rb",
+                  "features/step_definitions/web_steps.rb"
 
       m.template  "features/support/env.rb.erb",
                   "features/support/env.rb"
@@ -101,9 +101,9 @@ class TempatraGenerator < RubiGen::Base
       # Compass
       compass = which "compass"
       unless File.exist?(File.expand_path(@destination_root) + '/public/images/grid.png')
-        m.run("#{compass} --force --grid-img --images-dir public/images")
+        m.run("#{compass} grid-img 30+10x22 public/images/grid.png --force")
       end
-      m.run("#{compass}") if compile
+      m.run("#{compass} --trace compile") if compile
 
       # Git
       if heroku || git_init
@@ -138,7 +138,7 @@ class TempatraGenerator < RubiGen::Base
     You can continuously compile your Sass stylesheets with Compass
     $ compass --watch
 
-    And of course, use autospec
+    Use autospec
     $ autospec
 
 
@@ -154,7 +154,7 @@ protected
     ----------------------
     Tempatra
 
-    A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.
+    A basic Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.
 
     Usage: tempatra your-app-name [options]
     EOS

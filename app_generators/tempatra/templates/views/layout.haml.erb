@@ -1,60 +1,78 @@
 !!!
-%html{:xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang' => "en", :lang => "en"}
+%html{:dir => "ltr", :lang => "en-US"}
   %head
-    %meta{'http-equiv' => "Content-Type", 'content' => "text/html; charset=utf-8"}
-    %title <%= app_full_name %> - A Sinatra application using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.
-    %link{:rel => 'stylesheet', :href => '/stylesheets/main.css', :type => "text/css", :media => 'screen, projection'}
-    %link{:rel => 'stylesheet', :href => '/stylesheets/print.css', :type => "text/css", :media => "print"}
+    %meta{:charset => "utf-8" }
+    %title <%= app_full_name %>
+    %meta{:name     => "description",
+          :content  => "A Sinatra application template built with Blueprint, Compass, Haml, jQuery, Sass, RSpec, Cucumber, and Capybara." }
+    %link{:rel    =>'stylesheet',
+          :href   =>'/stylesheets/main.css',
+          :type   => "text/css",
+          :media  => 'screen, projection' }
+    %link{:rel    => 'stylesheet',
+          :href   => '/stylesheets/print.css',
+          :type   => "text/css",
+          :media  => "print" }
     /[if lt IE 8]
-      %link{:rel => 'stylesheet', :href => '/stylesheets/ie.css', :type => "text/css", :media => 'screen, projection'}
-  %body.three-col
+      %link{:rel    => 'stylesheet',
+            :href   => '/stylesheets/ie.css',
+            :type   => "text/css",
+            :media  => 'screen, projection'}
+  %body
     %a{:href => "http://github.com/olauzon/tempatra"}
-      %img{:style => "position: absolute; top: 0; right: 0; border: 0;", :src => "http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png", :alt => "Fork me on GitHub"}
-    #container
-      #header
+      %img{ :style => "position: absolute; top: 0; right: 0; border: 0;",
+            :src => "http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png",
+            :alt => "Fork me on GitHub"}
+    #container{:class => settings.environment }
+      %header#header
         %h1
-          %a{:href => '/'} <%= app_full_name %>
+          %a{:href => '/'}
+            <%= app_full_name %>
       #content
         = yield
       #sidebar
-        %ul#sidebar-links
-          %li
-            %a{:href => 'http://www.sinatrarb.com/'} Sinatra
-          %li
-            %a{:href => 'http://www.blueprintcss.org/'} Blueprint CSS
-          %li
-            %a{:href => 'http://jquery.com/'} jQuery
-          %li
-            %a{:href => 'http://haml-lang.com/'} Haml
-          %li
-            %a{:href => 'http://sass-lang.com/'} Sass
-          %li
-            %a{:href => 'http://compass-style.org/'} Compass
-          %li
-            %a{:href => 'http://rspec.info/'} RSpec
-          %li
-            %a{:href => 'http://cukes.info/'} Cucumber
-          %li
-            %a{:href => 'http://gitrdoc.com/brynary/webrat/tree/master/'} Webrat
-      #footer
-        %ul#footer-links
-          %li
-            %a{:href => 'http://www.sinatrarb.com/'} Sinatra
-          %li
-            %a{:href => 'http://www.blueprintcss.org/'} Blueprint CSS
-          %li
-            %a{:href => 'http://jquery.com/'} jQuery
-          %li
-            %a{:href => 'http://haml-lang.com/'} Haml
-          %li
-            %a{:href => 'http://sass-lang.com/'} Sass
-          %li
-            %a{:href => 'http://compass-style.org/'} Compass
-          %li
-            %a{:href => 'http://rspec.info/'} RSpec
-          %li
-            %a{:href => 'http://cukes.info/'} Cucumber
-          %li
-            %a{:href => 'http://gitrdoc.com/brynary/webrat/tree/master/'} Webrat
-    %script{:type => "text/javascript", :src => "/javascripts/jquery-1.3.2.min.js"}
-    %script{:type => "text/javascript", :src => "/javascripts/application.js"}
+        %nav
+          %ul
+            %li
+              %a{:href => 'http://www.sinatrarb.com/'} Sinatra
+            %li
+              %a{:href => 'http://www.blueprintcss.org/'} Blueprint CSS
+            %li
+              %a{:href => 'http://jquery.com/'} jQuery
+            %li
+              %a{:href => 'http://haml-lang.com/'} Haml
+            %li
+              %a{:href => 'http://sass-lang.com/'} Sass
+            %li
+              %a{:href => 'http://compass-style.org/'} Compass
+            %li
+              %a{:href => 'http://rspec.info/'} RSpec
+            %li
+              %a{:href => 'http://cukes.info/'} Cucumber
+            %li
+              %a{:href => 'http://github.com/jnicklas/capybara'} Capybara
+      %footer#footer
+        %nav
+          %ul
+            %li
+              %a{:href => 'http://www.sinatrarb.com/'} Sinatra
+            %li
+              %a{:href => 'http://www.blueprintcss.org/'} Blueprint CSS
+            %li
+              %a{:href => 'http://jquery.com/'} jQuery
+            %li
+              %a{:href => 'http://haml-lang.com/'} Haml
+            %li
+              %a{:href => 'http://sass-lang.com/'} Sass
+            %li
+              %a{:href => 'http://compass-style.org/'} Compass
+            %li
+              %a{:href => 'http://rspec.info/'} RSpec
+            %li
+              %a{:href => 'http://cukes.info/'} Cucumber
+            %li
+              %a{:href => 'http://github.com/jnicklas/capybara'} Capybara
+    %script{  :type => "text/javascript",
+              :src  => "/javascripts/jquery-1.4.2.min.js" }
+    %script{  :type => "text/javascript",
+              :src  => "/javascripts/application.js" }

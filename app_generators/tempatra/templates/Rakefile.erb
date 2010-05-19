@@ -35,5 +35,5 @@ end
 require 'cucumber/rake/task'
 Cucumber::Rake::Task.new(:cucumber, 'Run all Cucumber features') do |t|
   t.fork = true # You may get faster startup if you set this to false
-  t.cucumber_opts = "--tags ~@wip --strict --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
+  t.cucumber_opts = "--guess --tags ~@wip --strict --format #{ENV['CUCUMBER_FORMAT'] || 'pretty'}"
 end

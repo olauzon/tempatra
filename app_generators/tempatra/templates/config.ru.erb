@@ -4,5 +4,8 @@
 require File.join(File.dirname(__FILE__), 'lib', '<%= app_file_name %>.rb')
 
 disable :run
-set :environment, :development
+
+# Uncomment to run in development mode on Heroku
+#set :environment, :development
+
 run <%= module_name %>

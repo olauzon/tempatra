@@ -5,24 +5,23 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "tempatra"
-    gem.summary = %Q{A RubiGen based Sinatra application generator.}
-    gem.description = %Q{A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.}
+    gem.summary = %Q{A basic Sinatra application generator.}
+    gem.description = %Q{A basic Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.}
     gem.email = "olauzon@gmail.com"
     gem.homepage = "http://github.com/olauzon/tempatra"
     gem.authors = ["Olivier Lauzon", "Stewart Laufer"]
 
-    gem.add_dependency('compass', '>= 0.8.17')
-    gem.add_dependency('cucumber', '>= 0.4.4')
-    gem.add_dependency('haml', '>= 2.2.13')
-    gem.add_dependency('rack-test', '>= 0.5.2')
-    gem.add_dependency('rake', '>= 0.8.7')
-    gem.add_dependency('rdiscount', '>= 1.5.5')
-    gem.add_dependency('rspec')
-    gem.add_dependency('rubigen', '>= 1.5.2')
-    gem.add_dependency('sinatra', '>= 0.9.4')
-    gem.add_dependency('thin', '>= 1.2.3')
-    gem.add_dependency('webrat', '>= 0.5.3')
-    gem.add_dependency('shotgun', '>= 0.4')
+    gem.add_dependency('compass',   '~> 0.10.2')
+    gem.add_dependency('cucumber',  '~> 0.7.3')
+    gem.add_dependency('haml',      '~> 3.0.9')
+    gem.add_dependency('rack-test', '~> 0.5.3')
+    gem.add_dependency('rdiscount', '~> 1.6.3.2')
+    gem.add_dependency('rspec',     '>= 1.2.6')
+    gem.add_dependency('rubigen',   '~> 1.5.5')
+    gem.add_dependency('sinatra',   '~> 1.0')
+    gem.add_dependency('shotgun',   '>= 0.6')
+    gem.add_dependency('thin',      '>= 1.2.3')
+    gem.add_dependency('capybara',  '~> 0.3.8')
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.files = FileList[ 'app_generators/**/*',

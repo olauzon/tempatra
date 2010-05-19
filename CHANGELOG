@@ -1,0 +1,11 @@
+0.1.0
+
+* Upgraded Compass to ~> 0.10.2
+* Upgraded jQuery to 1.4.2
+* Upgraded Haml to ~> 3.0.9
+* Upgraded RDiscount to ~> 1.6.3.2
+* Upgraded Cucumber to ~> 0.7.3
+* Upgraded RubiGen to ~> 1.5.5
+* Upgraded Sinatra to ~> 1.0
+* Switched to Capybara ~> 0.3.8 from Webrat
+* Restyled generated homepage (thanks to Stewart Laufer)

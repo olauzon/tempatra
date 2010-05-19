@@ -60,8 +60,8 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/olauzon/tempatra}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
-  s.summary = %q{A RubiGen based Sinatra application generator.}
+  s.rubygems_version = %q{1.3.7}
+  s.summary = %q{A basic Sinatra application generator.}
   s.test_files = [
     "spec/rcov.opts",
      "spec/spec.opts",

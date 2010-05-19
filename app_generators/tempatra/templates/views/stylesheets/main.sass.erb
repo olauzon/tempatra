@@ -1,13 +1,16 @@
 // This import applies a global reset to any page that imports this stylesheet.
-@import blueprint/reset.sass
-// To configure blueprint, edit the partials/base.sass file.
-@import partials/base.sass
-// Import all the default blueprint modules so that we can access their mixins.
-@import blueprint
-// Import the non-default scaffolding module.
-@import blueprint/modules/scaffolding.sass
+@import blueprint/reset
 
-@import compass/utilities.sass
+// To configure blueprint, edit the partials/base.sass file.
+@import partials/base
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint"
+
+// Import the non-default scaffolding module.
+@import "blueprint/scaffolding"
+
+@import compass/utilities
 
 // To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
 // +blueprint
@@ -22,68 +25,81 @@ body
   +blueprint-interaction
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
+
 form
   +blueprint-form
 
 // Page layout can be done using mixins applied to your semantic classes and IDs:
-body.three-col
+body
   #sidebar
-    // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    !sidebar_columns = floor(!blueprint_grid_columns / 3)
+    // One fourth of the grid columns, rounding down. With 24 cols, this is 6.
+    $sidebar_columns: floor($blueprint_grid_columns / 4)
     // true means it's the last column in the row
-    +column(!sidebar_columns, true)
+    +column($sidebar_columns, true)
   #content
-    // 2/3 grid columns, rounding up.
-    // With 24 cols, this is 16.
-    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
-    +column(!content_columns)
+    // 3/4 grid columns, rounding up.
+    // With 24 cols, this is 18.
+    $content_columns: ceil(3 * $blueprint_grid_columns / 4)
+    +column($content_columns)
 
 body
   #container
     +container
-    +showgrid
+    &.development
+      +showgrid
 
   #header, #footer
-    +column(!blueprint_grid_columns)
+    +column($blueprint_grid_columns)
 
 body
-  font-family: "Garamond", "Georgia", "Times", "serif"
-  font-size: 16px
+  :font-family "Garamond", "Georgia", "Times", "serif"
+  :font-size 16px
+  :line-height 1.375
+  p
+    :margin 0px 0px 1.375em
 
-h1
-  padding-top: 10px
-
-=alt
-  color: #666
-  font-family: "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", "Georgia", "serif"
-  font-style: italic
-  font-weight: normal
-  a
-    +hover-link
-
-#subtitle
-  font-size: 2em
-  +alt
-
-#footer-links
-  list-style: none
-  li
-    display: inline
-    text-align: center
-    padding: 0px 5px
+body
+  header#header
     a
       +hover-link
 
-#sidebar-links
-  font-size: 1.5em
-  +no-bullets
+body
+  footer#footer
+    :width 100%
+    :text-align center
+    nav
+      ul
+        :list-style none
+        li
+          :display inline
+          :text-align center
+          :padding 0 0.5em
+          a
+            +hover-link
+
+body
+  #sidebar
+    +push-margins(1)
+    nav
+      ul
+        +no-bullets
+        :margin 0px
+        :margin-top -0.375em
+        :padding-left 0px
+      a
+        +hover-link
+
+=alt
+  :color #666
+  :font-family "Warnock Pro", "Goudy Old Style", "Palatino", "Book Antiqua", "Georgia", "serif"
+  :font-style italic
+  :font-weight normal
   a
     +hover-link
 
-#header
-  a
-    +hover-link
-
-#footer
-  width: 100%
-  text-align: center
+body
+  .subtitle
+    :font-size 2em
+    p
+      :margin 0px 0px 0.5em
+    +alt
