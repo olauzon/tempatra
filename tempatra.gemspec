@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tempatra}
-  s.version = "0.0.4"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Olivier Lauzon"]
-  s.date = %q{2009-12-04}
+  s.authors = ["Olivier Lauzon", "Stewart Laufer"]
+  s.date = %q{2010-06-04}
   s.default_executable = %q{tempatra}
-  s.description = %q{A Sinatra application generator using Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.}
+  s.description = %q{A basic Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.}
   s.email = %q{olauzon@gmail.com}
   s.executables = ["tempatra"]
   s.extra_rdoc_files = [
@@ -23,23 +23,22 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.md",
      "Rakefile",
-     "TODO",
      "VERSION",
      "app_generators/tempatra/tempatra_generator.rb",
      "app_generators/tempatra/templates/README.md.erb",
      "app_generators/tempatra/templates/Rakefile.erb",
      "app_generators/tempatra/templates/_gems",
      "app_generators/tempatra/templates/_gitignore",
-     "app_generators/tempatra/templates/config.rb.erb",
+     "app_generators/tempatra/templates/compass.config.erb",
      "app_generators/tempatra/templates/config.ru.erb",
      "app_generators/tempatra/templates/config.yml.erb",
      "app_generators/tempatra/templates/features/homepage.feature.erb",
-     "app_generators/tempatra/templates/features/step_definitions/webrat_steps.rb",
+     "app_generators/tempatra/templates/features/step_definitions/web_steps.rb",
      "app_generators/tempatra/templates/features/support/env.rb.erb",
      "app_generators/tempatra/templates/features/support/paths.rb",
      "app_generators/tempatra/templates/lib/tempatra.rb.erb",
      "app_generators/tempatra/templates/public/javascripts/application.js.erb",
-     "app_generators/tempatra/templates/public/javascripts/jquery-1.3.2.min.js",
+     "app_generators/tempatra/templates/public/javascripts/jquery-1.4.2.min.js",
      "app_generators/tempatra/templates/spec/rcov.opts",
      "app_generators/tempatra/templates/spec/spec.opts",
      "app_generators/tempatra/templates/spec/spec_helper.rb.erb",
@@ -73,46 +72,43 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<compass>, [">= 0.8.17"])
-      s.add_runtime_dependency(%q<cucumber>, [">= 0.4.4"])
-      s.add_runtime_dependency(%q<haml>, [">= 2.2.13"])
-      s.add_runtime_dependency(%q<rack-test>, [">= 0.5.2"])
-      s.add_runtime_dependency(%q<rake>, [">= 0.8.7"])
-      s.add_runtime_dependency(%q<rdiscount>, [">= 1.5.5"])
-      s.add_runtime_dependency(%q<rspec>, [">= 0"])
-      s.add_runtime_dependency(%q<rubigen>, [">= 1.5.2"])
-      s.add_runtime_dependency(%q<sinatra>, [">= 0.9.4"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<compass>, ["~> 0.10.2"])
+      s.add_runtime_dependency(%q<cucumber>, ["~> 0.7.3"])
+      s.add_runtime_dependency(%q<haml>, ["~> 3.0.9"])
+      s.add_runtime_dependency(%q<rack-test>, ["~> 0.5.3"])
+      s.add_runtime_dependency(%q<rdiscount>, ["~> 1.6.3.2"])
+      s.add_runtime_dependency(%q<rspec>, [">= 1.2.6"])
+      s.add_runtime_dependency(%q<rubigen>, ["~> 1.5.5"])
+      s.add_runtime_dependency(%q<sinatra>, ["~> 1.0"])
+      s.add_runtime_dependency(%q<shotgun>, [">= 0.6"])
       s.add_runtime_dependency(%q<thin>, [">= 1.2.3"])
-      s.add_runtime_dependency(%q<webrat>, [">= 0.5.3"])
-      s.add_runtime_dependency(%q<shotgun>, [">= 0.4"])
+      s.add_runtime_dependency(%q<capybara>, ["~> 0.3.8"])
     else
-      s.add_dependency(%q<compass>, [">= 0.8.17"])
-      s.add_dependency(%q<cucumber>, [">= 0.4.4"])
-      s.add_dependency(%q<haml>, [">= 2.2.13"])
-      s.add_dependency(%q<rack-test>, [">= 0.5.2"])
-      s.add_dependency(%q<rake>, [">= 0.8.7"])
-      s.add_dependency(%q<rdiscount>, [">= 1.5.5"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<rubigen>, [">= 1.5.2"])
-      s.add_dependency(%q<sinatra>, [">= 0.9.4"])
+      s.add_dependency(%q<compass>, ["~> 0.10.2"])
+      s.add_dependency(%q<cucumber>, ["~> 0.7.3"])
+      s.add_dependency(%q<haml>, ["~> 3.0.9"])
+      s.add_dependency(%q<rack-test>, ["~> 0.5.3"])
+      s.add_dependency(%q<rdiscount>, ["~> 1.6.3.2"])
+      s.add_dependency(%q<rspec>, [">= 1.2.6"])
+      s.add_dependency(%q<rubigen>, ["~> 1.5.5"])
+      s.add_dependency(%q<sinatra>, ["~> 1.0"])
+      s.add_dependency(%q<shotgun>, [">= 0.6"])
       s.add_dependency(%q<thin>, [">= 1.2.3"])
-      s.add_dependency(%q<webrat>, [">= 0.5.3"])
-      s.add_dependency(%q<shotgun>, [">= 0.4"])
+      s.add_dependency(%q<capybara>, ["~> 0.3.8"])
     end
   else
-    s.add_dependency(%q<compass>, [">= 0.8.17"])
-    s.add_dependency(%q<cucumber>, [">= 0.4.4"])
-    s.add_dependency(%q<haml>, [">= 2.2.13"])
-    s.add_dependency(%q<rack-test>, [">= 0.5.2"])
-    s.add_dependency(%q<rake>, [">= 0.8.7"])
-    s.add_dependency(%q<rdiscount>, [">= 1.5.5"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<rubigen>, [">= 1.5.2"])
-    s.add_dependency(%q<sinatra>, [">= 0.9.4"])
+    s.add_dependency(%q<compass>, ["~> 0.10.2"])
+    s.add_dependency(%q<cucumber>, ["~> 0.7.3"])
+    s.add_dependency(%q<haml>, ["~> 3.0.9"])
+    s.add_dependency(%q<rack-test>, ["~> 0.5.3"])
+    s.add_dependency(%q<rdiscount>, ["~> 1.6.3.2"])
+    s.add_dependency(%q<rspec>, [">= 1.2.6"])
+    s.add_dependency(%q<rubigen>, ["~> 1.5.5"])
+    s.add_dependency(%q<sinatra>, ["~> 1.0"])
+    s.add_dependency(%q<shotgun>, [">= 0.6"])
     s.add_dependency(%q<thin>, [">= 1.2.3"])
-    s.add_dependency(%q<webrat>, [">= 0.5.3"])
-    s.add_dependency(%q<shotgun>, [">= 0.4"])
+    s.add_dependency(%q<capybara>, ["~> 0.3.8"])
   end
 end
 
