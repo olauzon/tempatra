@@ -1,7 +1,7 @@
 Tempatra
 ========
 
-A RubiGen Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Webrat.
+A RubiGen Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.
 
 Installation
 ------------
