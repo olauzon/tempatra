@@ -1,4 +1,4 @@
-rdiscount   --version '~> 1.6.3.2'
+rdiscount   --version '~> 1.6.5'
 sinatra     --version '~> 1.0'
-haml        --version '~> 3.0.9'
-compass     --version '~> 0.10.2'
+haml        --version '~> 3.0.18'
+compass     --version '~> 0.10.5'

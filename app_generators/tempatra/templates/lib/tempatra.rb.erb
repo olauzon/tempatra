@@ -2,16 +2,17 @@ APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
 require 'rubygems'
 
-gem 'compass', '~> 0.10.2'
-require 'compass' # must be loaded before sinatra
+# <%= compile ? 'Unc' : 'C' %>omment to compile your stylesheets <%= 'without ' if compile %>using 'compass compile' or 'compass watch'
+<%= '#' if compile %>gem 'compass', '~> 0.10.5'
+<%= '#' if compile %>require 'compass' # must be loaded before sinatra
 
 gem 'sinatra', '~> 1.0'
 require 'sinatra'
 
-gem 'haml', '~> 3.0.9'
+gem 'haml', '~> 3.0.18'
 require 'haml'    # must be loaded after sinatra
 
-gem 'rdiscount', '~> 1.6.3.2'
+gem 'rdiscount', '~> 1.6.5'
 require 'rdiscount'
 
 class <%= module_name %> < Sinatra::Application
@@ -19,15 +20,16 @@ class <%= module_name %> < Sinatra::Application
   set :root, APP_ROOT
   set :haml, { :format => :html5 } # default Haml format is :xhtml
 
-  configure do
-    Compass.add_project_configuration(File.join(APP_ROOT, 'compass.config'))
-  end
+# <%= compile ? 'Unc' : 'C' %>omment to compile your stylesheets <%= 'without ' if compile %>using 'compass compile' or 'compass watch'
+<%= '#' if compile %>  configure do
+<%= '#' if compile %>    Compass.add_project_configuration(File.join(APP_ROOT, 'config/compass.rb'))
+<%= '#' if compile %>  end
 
   get '/' do
     haml :index
   end
 
-# <%= compile ? 'Unc' : 'C' %>omment to compile your stylesheets with<%= compile ? 'out' : '' %> the compass utility
+# <%= compile ? 'Unc' : 'C' %>omment to compile your stylesheets <%= 'without ' if compile %>using 'compass compile' or 'compass watch'
 <%= '#' if compile %>  get '/stylesheets/:name.css' do
 <%= '#' if compile %>    content_type 'text/css', :charset => 'utf-8'
 <%= '#' if compile %>    sass(:"stylesheets/#{params[:name]}", Compass.sass_engine_options )

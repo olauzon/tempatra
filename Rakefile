@@ -11,17 +11,17 @@ begin
     gem.homepage = "http://github.com/olauzon/tempatra"
     gem.authors = ["Olivier Lauzon", "Stewart Laufer"]
 
-    gem.add_dependency('compass',   '~> 0.10.2')
-    gem.add_dependency('cucumber',  '~> 0.7.3')
-    gem.add_dependency('haml',      '~> 3.0.9')
-    gem.add_dependency('rack-test', '~> 0.5.3')
-    gem.add_dependency('rdiscount', '~> 1.6.3.2')
-    gem.add_dependency('rspec',     '>= 1.2.6')
+    gem.add_dependency('compass',   '~> 0.10.5')
+    gem.add_dependency('cucumber',  '~> 0.8.5')
+    gem.add_dependency('haml',      '~> 3.0.18')
+    gem.add_dependency('rack-test', '~> 0.5.4')
+    gem.add_dependency('rdiscount', '~> 1.6.5')
+    gem.add_dependency('rspec',     '>= 1.3.0')
     gem.add_dependency('rubigen',   '~> 1.5.5')
     gem.add_dependency('sinatra',   '~> 1.0')
-    gem.add_dependency('shotgun',   '>= 0.6')
-    gem.add_dependency('thin',      '>= 1.2.3')
-    gem.add_dependency('capybara',  '~> 0.3.8')
+    gem.add_dependency('shotgun',   '>= 0.8')
+    gem.add_dependency('thin',      '>= 1.2.7')
+    gem.add_dependency('capybara',  '~> 0.3.9')
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
     gem.files = FileList[ 'app_generators/**/*',

@@ -39,11 +39,13 @@ class TempatraGenerator < RubiGen::Base
       # Root
       m.template  "_gems"               , ".gems"
       m.template  "_gitignore"          , ".gitignore"
-      m.template  "compass.config.erb"  , "compass.config"
       m.template  "config.ru.erb"       , "config.ru"
       m.template  "config.yml.erb"      , "config.yml"
       m.template  "Rakefile.erb"        , "Rakefile"
       m.template  "README.md.erb"       , "README.md"
+
+      # Config
+      m.template  "config/compass.rb.erb" , "config/compass.rb"
 
       # Sinatra
       m.template  "lib/tempatra.rb.erb" , "lib/#{app_file_name}.rb"
@@ -103,7 +105,7 @@ class TempatraGenerator < RubiGen::Base
       unless File.exist?(File.expand_path(@destination_root) + '/public/images/grid.png')
         m.run("#{compass} grid-img 30+10x22 public/images/grid.png --force")
       end
-      m.run("#{compass} --trace compile") if compile
+      m.run("#{compass} compile") if compile
 
       # Git
       if heroku || git_init
@@ -131,15 +133,21 @@ class TempatraGenerator < RubiGen::Base
     Move into your new application
     $ cd #{app_name}
 
-    To run your application
+    To run your application locally
     $ shotgun --server=thin -p 4567 config.ru
     (Then go to http://localhost:4567/ with your browser)
 
-    You can continuously compile your Sass stylesheets with Compass
-    $ compass --watch
+    To compile your Sass stylesheets with Compass on demand
+    $ compass compile
+
+    To monitor your project for changes and automatically recompile
+    $ compass watch
 
     Use autospec
     $ autospec
+
+    Run RSpec and Cucumber tests
+    $ rake
 
 
 "
@@ -164,12 +172,13 @@ protected
     opts.separator ''
     opts.separator "Tempatra options:"
     opts.on("-v", "--version" , "Show the Tempatra version number and quit")
-    opts.on("-C", "--compile" , "Compile Compass stylesheets")    {|o| options[:compile]  = o}
+    opts.on("-C", "--no-compile" , "Don't compile Compass stylesheets")    {|o| options[:no_compile]  = o}
     opts.on("-N", "--no-git"  , "Don't create a git repository")  {|o| options[:no_git]   = o}
     opts.on("-H", "--heroku"  , "Create and push to Heroku")      {|o| options[:heroku]   = o}
   end
 
   BASEDIRS = %w(
+                  config
                   features
                   features/step_definitions
                   features/support
@@ -183,9 +192,9 @@ protected
               )
 
   def extract_options
-    @compile  = options[:compile].nil? ? false  : true
-    @git_init = options[:no_git].nil?  ? true   : false
-    @heroku   = options[:heroku].nil?  ? false  : true
+    @compile  = options[:no_compile].nil? ? true  : false
+    @git_init = options[:no_git].nil?     ? true  : false
+    @heroku   = options[:heroku].nil?     ? false : true
   end
 
   def which(bin)
