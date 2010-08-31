@@ -28,7 +28,7 @@ begin
                           'bin/*',
                           'lib/**/*.rb',
                           '[A-Z]*',
-                          'spec/**/*'].to_a.reject { |f| f =~ /^spec\/tmp/ }
+                          'spec/**/*'].to_a.reject { |f| f =~ /^spec\/tmp|^Gemfile/ }
     gem.test_files = FileList['spec/**/*'].to_a.reject { |f| f =~ /^spec\/tmp/ }
   end
 rescue LoadError
