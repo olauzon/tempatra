@@ -2,6 +2,9 @@
 .sass-cache/*
 *.sw?
 .DS_Store
+.bundle
+.rvmrc
+Gemfile*
 coverage
 pkg
 rdoc
