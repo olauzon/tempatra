@@ -16,11 +16,11 @@ begin
     gem.add_dependency('haml',      '~> 3.0.18')
     gem.add_dependency('rack-test', '~> 0.5.4')
     gem.add_dependency('rdiscount', '~> 1.6.5')
-    gem.add_dependency('rspec',     '>= 1.3.0')
+    gem.add_dependency('rspec',     '~> 1.3.0')
     gem.add_dependency('rubigen',   '~> 1.5.5')
     gem.add_dependency('sinatra',   '~> 1.0')
-    gem.add_dependency('shotgun',   '>= 0.8')
-    gem.add_dependency('thin',      '>= 1.2.7')
+    gem.add_dependency('shotgun',   '~> 0.8')
+    gem.add_dependency('thin',      '~> 1.2.7')
     gem.add_dependency('capybara',  '~> 0.3.9')
 
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
