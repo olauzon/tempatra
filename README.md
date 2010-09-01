@@ -1,7 +1,7 @@
 Tempatra
 ========
 
-A RubiGen Sinatra application generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.
+A RubiGen Sinatra application template generator providing Blueprint CSS, jQuery, Haml, Sass, Compass, RSpec, Cucumber, and Capybara.
 
 Installation
 ------------
@@ -12,27 +12,35 @@ Installation
 Basic Usage
 -----------
 
-To generate a new application:
+Generate a new application
 
     $ tempatra your-app-name
 
-Move into your new application:
+Move into your new application
 
     $ cd your-app-name
 
-Run your application:
+To run your application locally
 
     $ shotgun --server=thin -p 4567 config.ru
 
-Then go to [http://localhost:4567/](http://localhost:4567/) with your browser.
+Then go to [http://localhost:4567/](http://localhost:4567/) with your browser)
 
-You can continuously compile your Sass stylesheets with Compass (in another terminal):
+To compile your Sass stylesheets with Compass on demand
 
-    $ compass --watch
+    $ compass compile
 
-And of course, use autospec (in yet another terminal)
+To monitor your project for changes and automatically recompile
+
+    $ compass watch
+
+Use autospec
 
     $ autospec
+
+Run RSpec and Cucumber tests
+
+    $ rake
 
 
 Options
@@ -46,9 +54,13 @@ Display Tempatra version number
 
     $ tempatra -v
 
-Create git repository
+Don't create git repository
 
-    $ tempatra your-app-name -G
+    $ tempatra your-app-name -N
+
+Don't run Compass as a standalone project
+
+    $ tempatra your-app-name -C
 
 Create and push to Heroku (requires heroku gem and Heroku account)
 
@@ -71,4 +83,4 @@ Olivier Lauzon (olauzon)
 Copyright
 ---------
 
-Copyright (c) 2009 Olivier Lauzon. See LICENSE for details.
+Copyright (c) 2009-2010 Olivier Lauzon. See LICENSE for details.
