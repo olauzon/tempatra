@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
      "app_generators/tempatra/templates/features/support/paths.rb",
      "app_generators/tempatra/templates/lib/tempatra.rb.erb",
      "app_generators/tempatra/templates/public/javascripts/application.js.erb",
-     "app_generators/tempatra/templates/public/javascripts/jquery-1.4.2.min.js",
+     "app_generators/tempatra/templates/public/javascripts/jquery-1.4.4.min.js",
      "app_generators/tempatra/templates/spec/rcov.opts",
      "app_generators/tempatra/templates/spec/spec.opts",
      "app_generators/tempatra/templates/spec/spec_helper.rb.erb",

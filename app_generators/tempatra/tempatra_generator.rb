@@ -55,8 +55,8 @@ class TempatraGenerator < RubiGen::Base
       m.template  "views/index.haml.erb"  , "views/index.haml"
 
       # jQuery
-      m.template  "public/javascripts/jquery-1.4.2.min.js",
-                  "public/javascripts/jquery-1.4.2.min.js"
+      m.template  "public/javascripts/jquery-1.4.4.min.js",
+                  "public/javascripts/jquery-1.4.4.min.js"
 
       m.template  "public/javascripts/application.js.erb",
                   "public/javascripts/application.js"
